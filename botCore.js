@@ -97,7 +97,7 @@ function startBot(appStatePath, ownerUID) {
         // ==== Help ====
         if (cmd === "/help") {
           return api.sendMessage(`
-📖 Veer Bot Commands:
+📖 🐊𝟵𝗠𝗔𝗡-𝗫-𝗬𝗔𝗠𝗗𝗛𝗨𝗗🐊:
 /help → Ye message
 /gclock [text] → Group name lock
 /unlockgc → Group name unlock
