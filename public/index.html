@@ -3,75 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Veer Bot Panel </title>
+  <title>🐊𝟵𝗠𝗔𝗡-𝗫-𝗬𝗔𝗠𝗗𝗛𝗨𝗗🐊</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+    :root {
+      --neon-cyan: #00f2ff;
+      --neon-pink: #ff0055;
+      --neon-purple: #bc13fe;
+    }
+
     body {
       margin: 0;
+      padding: 0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      /* Using a reliable high-quality cyber neon mesh background URL */
+      background: url('https://images.wallpapersden.com/image/download/cyberpunk-neon-grid-mesh_bG1lZ2mUmZqaraWkpJRmbmdlrWZnZWU.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       color: #fff;
+      overflow: hidden;
     }
+
+    /* Backup CSS Grid in case image fails to load */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+      background-size: cover, 40px 40px, 40px 40px;
+      z-index: -1;
+    }
+
     .panel {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(12px);
+      position: relative;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid var(--neon-cyan);
       border-radius: 20px;
       padding: 30px;
       width: 350px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 10px rgba(0, 242, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
+
     h1 {
-      margin-bottom: 15px;
-      font-size: 22px;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px var(--neon-cyan);
     }
+
     input, button {
       width: 100%;
-      padding: 10px;
-      margin: 6px 0;
+      padding: 12px;
+      margin: 10px 0;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       font-size: 14px;
+      box-sizing: border-box;
+      outline: none;
     }
+
     input {
-      background: rgba(255,255,255,0.9);
-      color: #333;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(0, 242, 255, 0.4);
     }
+
+    input:focus {
+      border-color: var(--neon-pink);
+      box-shadow: 0 0 10px var(--neon-pink);
+    }
+
     button {
       cursor: pointer;
-      background: #ff3366;
-      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
       font-weight: bold;
-      transition: 0.2s;
+      transition: 0.3s;
     }
-    button:hover {
-      background: #e91e63;
+
+    .btn-start {
+      background: var(--neon-cyan);
+      color: #000;
+      box-shadow: 0 0 15px var(--neon-cyan);
     }
+
+    .btn-start:hover {
+      background: #fff;
+      box-shadow: 0 0 25px #fff;
+    }
+
+    .btn-stop {
+      background: transparent;
+      color: var(--neon-pink);
+      border: 2px solid var(--neon-pink);
+      box-shadow: 0 0 10px var(--neon-pink);
+    }
+
+    .btn-stop:hover {
+      background: var(--neon-pink);
+      color: #fff;
+      box-shadow: 0 0 20px var(--neon-pink);
+    }
+
     #logs {
-      margin-top: 15px;
+      margin-top: 20px;
       height: 120px;
       overflow-y: auto;
-      background: rgba(0,0,0,0.3);
-      padding: 8px;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 12px;
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 11px;
       text-align: left;
+      border: 1px solid var(--neon-purple);
+      color: #00ffcc;
+      font-family: 'Orbitron', monospace;
+    }
+
+    #logs div {
+      margin-bottom: 5px;
+      border-left: 2px solid var(--neon-cyan);
+      padding-left: 8px;
+    }
+
+    /* Custom scrollbar */
+    #logs::-webkit-scrollbar {
+      width: 3px;
+    }
+    #logs::-webkit-scrollbar-thumb {
+      background: var(--neon-cyan);
     }
   </style>
 </head>
 <body>
   <div class="panel">
-    <h1>Veer Bot Panel </h1>
+    <h1>🐊𝟵𝗠𝗔𝗡-𝗫-𝗬𝗔𝗠𝗗𝗛𝗨𝗗 𝗙𝗕 𝗡𝗔𝗠𝗘 𝗟𝗢𝗢𝗖𝗞 𝗕𝗢𝗧🐊</h1>
     <form id="startForm">
       <input type="file" name="appstate" required />
-      <input type="text" name="owner" placeholder="Enter Owner UID" required />
-      <button type="submit">🚀 Start Bot</button>
+      <input type="text" name="owner" placeholder="Owner UID" required />
+      <button type="submit" class="btn-start">⚡ Start Bot</button>
     </form>
-    <button onclick="stopBot()">🛑 Stop Bot</button>
-    <div id="logs">Logs will appear here...</div>
+    <button onclick="stopBot()" class="btn-stop">🛑 Stop Bot</button>
+    <div id="logs">System Initialized...</div>
   </div>
 
   <script>
@@ -79,30 +168,40 @@
 
     function addLog(msg) {
       const p = document.createElement("div");
-      p.textContent = msg;
+      p.textContent = `> ${msg}`;
       logs.appendChild(p);
       logs.scrollTop = logs.scrollHeight;
     }
 
     document.getElementById("startForm").addEventListener("submit", async e => {
       e.preventDefault();
-      const formData = new FormData(e.target);
-      const res = await fetch("/start", { method: "POST", body: formData });
-      const data = await res.json();
-      addLog(data.message);
+      addLog("Starting...");
+      try {
+        const res = await fetch("/start", { method: "POST", body: new FormData(e.target) });
+        const data = await res.json();
+        addLog(data.message);
+      } catch (err) {
+        addLog("Error: Server Offline");
+      }
     });
 
     async function stopBot() {
-      const res = await fetch("/stop", { method: "POST" });
-      const data = await res.json();
-      addLog(data.message);
+      addLog("Stopping...");
+      try {
+        const res = await fetch("/stop", { method: "POST" });
+        const data = await res.json();
+        addLog(data.message);
+      } catch (err) {
+        addLog("Error: Server Offline");
+      }
     }
 
-    // auto refresh status
     setInterval(async () => {
-      const res = await fetch("/status");
-      const data = await res.json();
-      addLog(`Status: ${data.running ? "✅ Running" : "❌ Stopped"} | Owner: ${data.owner || "-"}`);
+      try {
+        const res = await fetch("/status");
+        const data = await res.json();
+        addLog(`Status: ${data.running ? "RUNNING" : "STOPPED"}`);
+      } catch (err) {}
     }, 5000);
   </script>
 </body>
